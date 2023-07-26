@@ -4,6 +4,7 @@
     {{ products }} -->
 
 <div class="min-h-screen bg-gray-100">
+    <!-- <ProductFilter/> -->
   <div class="container mx-auto py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <!-- <div v-for="product in products" :key="'product' + product.id" class="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -42,6 +43,6 @@
 
 <script setup>
 
-const products = await $fetch('https://fakestoreapi.com/products')
+const products = await $fetch('https://fakestoreapi.com/products/')
 
 </script>
