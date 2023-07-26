@@ -12,7 +12,10 @@
       </div>
       <div class="flex-1 mr-4">
         <div class="flex items-center border border-gray-300 rounded-md">
-          <input type="text" class="w-full px-4 py-2 outline-none" placeholder="Search...">
+            <!-- {{ searchText }} -->
+          <input 
+          v-model="searchText"
+          type="text" class="w-full px-4 py-2 outline-none" placeholder="Search...">
           <button class="px-4 text-blue-500 focus:outline-none" @click="search"><i class="fas fa-search"></i></button>
         </div>
       </div>
@@ -25,10 +28,13 @@
   </template>
   
   <script setup>
+  
   import { ref, onMounted } from 'vue';
   
-  let activeTab = ref(0); // Set activeTab to 0 for "All" category
+  let activeTab = ref('all'); // Set activeTab to 0 for "All" category
   let categories = ref([]);
+
+  const searchText = ref('')
   
   const fetchCategories = async () => {
     try {
